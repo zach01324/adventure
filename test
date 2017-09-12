@@ -1,0 +1,103 @@
+onEvent("startButton", "click", function() {
+  setScreen("BEGINscreen");
+});
+onEvent("E1", "click", function(event) {
+  setScreen("ewRoadScreen");
+});
+onEvent("w2", "click", function(event) {
+  setScreen("BEGINscreen");
+});
+onEvent("E2", "click", function(event) {
+  setScreen("ns1Screen");
+});
+onEvent("w3", "click", function(event) {
+  setScreen("ewRoadScreen");
+});
+onEvent("n1button", "click", function(event) {
+  setScreen("nsBearScreen");
+});
+onEvent("s1Button", "click", function(event) {
+  setScreen("nsHouseScreen");
+});
+onEvent("tryButton", "click", function() {
+  if (getText("getkey")=="Leave Key") {
+    showElement("nogobutton")
+  } else {
+    showElement("gobutton");
+  showElement("goin");
+  hideElement("nogobutton");
+  hideElement("tryButton")
+  }
+});
+onEvent("goin", "click", function(event) {
+  setScreen("Hallway");
+});
+onEvent("s-bearRoad", "click", function(event) {
+  setScreen("ns1Screen");
+});
+onEvent("nHouseButton", "click", function(event) {
+  setScreen("ns1Screen");
+});
+onEvent("PlayAgain", "click", function(event) {
+  setScreen("startScreen");
+});
+onEvent("n-bearRoad", "click", function(event) {
+  setScreen("DEAD");
+});
+onEvent("DEAD", "click", function(event) {
+  setScreen("startScreen");
+});
+onEvent("ho", "click", function(event) {
+  setScreen("nsHouseScreen");
+});
+onEvent("he", "click", function(event) {
+  setScreen("mailroom");
+});
+onEvent("ce", "click", function(event) {
+  setScreen("Hallway");
+});
+onEvent("lookbin", "click", function(event) {
+  hideElement("mailroomtxt")
+  hideElement("lookbin")
+  hideElement("mw")
+  showElement("robert toukmond")
+  showElement("lookout")
+});
+onEvent("mw", "click", function(event) {
+  setScreen("Hallway");
+});
+onEvent("type", "click", function(event) {
+  if (getText("getCpu")=="Leave CPU card") {
+    showElement("noCpu!");
+  } else {
+  showElement("type2");
+  hideElement("noCpu!");
+  hideElement("type")
+  showElement("enter")
+  }
+});
+onEvent("hw", "click", function(event) {
+  setScreen("Computor room");
+});
+onEvent("dig", "click", function(event) {
+  showElement("foundsomething")
+  showElement("look")
+  hideElement("softground")
+  hideElement("dig")
+});
+onEvent("look", "click", function(event) {
+  hideElement("look")
+  hideElement("foundsomething")
+  showElement("CPUtxt")
+  showElement("getCpu");
+});
+onEvent("lookout", "click", function(event) {
+  setScreen("Hallway");
+});
+onEvent("enter", "click", function(event) {
+  if (getText("type2")=="Robert Toukmond") {
+    setScreen("WIN");
+  } else {
+showElement("incorrect")
+  }
+});
